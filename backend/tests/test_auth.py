@@ -26,7 +26,7 @@ def test_login_and_get_user():
     uid = payload['sub']
 
     # fetch the user endpoint
-    resp = client.get(f'/api/users/{uid}')
+    resp = client.get(f'/api/users/{uid}', headers={'Authorization': f'Bearer {token}'})
     assert resp.status_code == 200
     user_data = resp.get_json()
     assert user_data['email'] == 'alex@example.com'
