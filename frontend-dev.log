@@ -1,0 +1,934 @@
+nohup: ignoring input
+
+> hr-frontend@0.1.0 dev
+> next dev -p 3000 -H 0.0.0.0
+
+  ▲ Next.js 13.5.11
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+
+ ✓ Ready in 1252ms
+ ✓ Compiled /people in 1521ms (280 modules)
+ ✓ Compiled /profile in 239ms (284 modules)
+ ✓ Compiled in 125ms (165 modules)
+ ✓ Compiled in 63ms (165 modules)
+ ✓ Compiled in 57ms (165 modules)
+ ✓ Compiled in 85ms (165 modules)
+ ✓ Compiled in 298ms (284 modules)
+ ✓ Compiled in 338ms (284 modules)
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/profile.js:164:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/profile.js:167:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/profile'
+}
+ ✓ Compiled /_error in 150ms (286 modules)
+ ✓ Compiled / in 69ms (290 modules)
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/index.js:164:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/index.js:167:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/index.js:164:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/index.js:167:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ⨯ ./pages/profile.tsx
+Error: 
+  [31mx[0m Expression expected
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/pages/profile.tsx[0m:37:1]
+ [2m37[0m |   }
+ [2m38[0m | 
+ [2m39[0m |   return (
+ [2m40[0m |     <>
+    : [31;1m     ^[0m
+ [2m41[0m |       <Nav />
+ [2m42[0m |       <main className="max-w-4xl mx-auto p-6">
+ [2m43[0m |         {loading && <p>Loading…</p>}
+    `----
+
+  [31mx[0m Expected ',', got 'className'
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/pages/profile.tsx[0m:39:1]
+ [2m39[0m |   return (
+ [2m40[0m |     <>
+ [2m41[0m |       <Nav />
+ [2m42[0m |       <main className="max-w-4xl mx-auto p-6">
+    : [31;1m            ^^^^^^^^^[0m
+ [2m43[0m |         {loading && <p>Loading…</p>}
+ [2m44[0m |         {error && <p className="text-red-600">Error: {error}</p>}
+ [2m45[0m |         {p && (
+    `----
+
+Caused by:
+    Syntax Error
+ ✓ Compiled in 267ms (288 modules)
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/index.js:164:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/index.js:167:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ✓ Compiled in 171ms (284 modules)
+ ✓ Compiled in 265ms (284 modules)
+ ✓ Compiled in 131ms (284 modules)
+ ✓ Compiled in 93ms (284 modules)
+ ✓ Compiled in 81ms (284 modules)
+ ✓ Compiled in 330ms (284 modules)
+ ✓ Compiled in 108ms (284 modules)
+ ✓ Compiled in 81ms (284 modules)
+ ✓ Compiled in 50ms (164 modules)
+ ✓ Compiled in 53ms (164 modules)
+ ✓ Compiled in 113ms (284 modules)
+ ✓ Compiled in 249ms (286 modules)
+ ✓ Compiled /login in 132ms (290 modules)
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/login'
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ✓ Compiled in 101ms (290 modules)
+ ✓ Compiled in 77ms (290 modules)
+ ✓ Compiled in 98ms (290 modules)
+ ✓ Compiled in 268ms (286 modules)
+ ✓ Compiled in 93ms (286 modules)
+ ✓ Compiled in 86ms (286 modules)
+ ✓ Compiled in 78ms (286 modules)
+ ✓ Compiled in 81ms (286 modules)
+ ✓ Compiled in 280ms (286 modules)
+ ⨯ ./context/AuthContext.tsx
+Error: 
+  [31mx[0m Expected ',', got 'window'
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/context/AuthContext.tsx[0m:19:1]
+ [2m19[0m |             if (e.key === 'token') setToken(e.newValue)
+ [2m20[0m |         }
+ [2m21[0m | 
+ [2m22[0m |         window.addEventListener('storage', onStorage)
+    : [31;1m        ^^^^^^[0m
+ [2m23[0m |         return () => window.removeEventListener('storage', onStorage)
+ [2m24[0m |     }, [])
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./context/AuthContext.tsx
+ ⨯ ./context/AuthContext.tsx
+Error: 
+  [31mx[0m Expected ',', got 'window'
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/context/AuthContext.tsx[0m:19:1]
+ [2m19[0m |             if (e.key === 'token') setToken(e.newValue)
+ [2m20[0m |         }
+ [2m21[0m | 
+ [2m22[0m |         window.addEventListener('storage', onStorage)
+    : [31;1m        ^^^^^^[0m
+ [2m23[0m |         return () => window.removeEventListener('storage', onStorage)
+ [2m24[0m |     }, [])
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./context/AuthContext.tsx
+ ⨯ ./context/AuthContext.tsx
+Error: 
+  [31mx[0m Expected ',', got 'window'
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/context/AuthContext.tsx[0m:19:1]
+ [2m19[0m |         if (e.key === 'token') setToken(e.newValue)
+ [2m20[0m |     }
+ [2m21[0m | 
+ [2m22[0m |         window.addEventListener('storage', onStorage)
+    : [31;1m        ^^^^^^[0m
+ [2m23[0m |         return () => window.removeEventListener('storage', onStorage)
+ [2m24[0m | }, [])
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./context/AuthContext.tsx
+ ✓ Compiled in 72ms (286 modules)
+ ✓ Compiled in 62ms (286 modules)
+ ✓ Compiled /login in 186ms (290 modules)
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/login'
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js
+- /home/hughie/development/hr-project/frontend/.next/server/pages/_document.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js
+- /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at /home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:54:36
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at mod.require (/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require-hook.js:64:28)
+    at require (node:internal/modules/helpers:177:18)
+    at __webpack_require__.f.require (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1413)
+    at /home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:648
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:609)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js:1:1056)
+    at /home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:131:47
+    at Object.<anonymous> (/home/hughie/development/hr-project/frontend/.next/server/pages/_app.js:134:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/hughie/development/hr-project/frontend/.next/server/webpack-runtime.js',
+    '/home/hughie/development/hr-project/frontend/.next/server/pages/_document.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/require.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/load-components.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/build/utils.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/router-server.js',
+    '/home/hughie/development/hr-project/frontend/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ✓ Compiled in 77ms (286 modules)
+ ✓ Compiled in 125ms (165 modules)
+ ✓ Compiled in 59ms (165 modules)
+ ✓ Compiled in 48ms (165 modules)
+ ✓ Compiled in 45ms (165 modules)
+ ✓ Compiled in 109ms (286 modules)
+ ✓ Compiled in 82ms (286 modules)
+ ✓ Compiled in 77ms (286 modules)
+ ✓ Compiled in 121ms (286 modules)
+ ✓ Compiled in 90ms (286 modules)
+ ✓ Compiled in 99ms (286 modules)
+ ⨯ ./pages/login.tsx
+Error: 
+  [31mx[0m await isn't allowed in non-async function
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/pages/login.tsx[0m:17:1]
+ [2m17[0m |         }
+ [2m18[0m |     }, [router])
+ [2m19[0m | 
+ [2m20[0m |     const { login } = (await import('../context/AuthContext')).useAuth ? {} : {}
+    : [31;1m                             ^^^^^^[0m
+ [2m21[0m | 
+ [2m22[0m | 
+ [2m23[0m |     async function handleSubmit(e: React.FormEvent) {
+    `----
+
+Caused by:
+    Syntax Error
+ ○ Compiling /login ...
+ ⨯ ./pages/login.tsx
+Error: 
+  [31mx[0m await isn't allowed in non-async function
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/pages/login.tsx[0m:17:1]
+ [2m17[0m |         }
+ [2m18[0m |     }, [router])
+ [2m19[0m | 
+ [2m20[0m |     const { login } = (await import('../context/AuthContext')).useAuth ? {} : {}
+    : [31;1m                             ^^^^^^[0m
+ [2m21[0m | 
+ [2m22[0m | 
+ [2m23[0m |     async function handleSubmit(e: React.FormEvent) {
+    `----
+
+Caused by:
+    Syntax Error
+ ⨯ ./pages/login.tsx
+Error: 
+  [31mx[0m await isn't allowed in non-async function
+    ,-[[36;1;4m/home/hughie/development/hr-project/frontend/pages/login.tsx[0m:17:1]
+ [2m17[0m |         }
+ [2m18[0m |     }, [router])
+ [2m19[0m | 
+ [2m20[0m |     const { login } = (await import('../context/AuthContext')).useAuth ? {} : {}
+    : [31;1m                             ^^^^^^[0m
+ [2m21[0m | 
+ [2m22[0m | 
+ [2m23[0m |     async function handleSubmit(e: React.FormEvent) {
+    `----
+
+Caused by:
+    Syntax Error
+ ✓ Compiled / in 114ms (286 modules)
+[?25h
