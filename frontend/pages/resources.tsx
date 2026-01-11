@@ -105,11 +105,11 @@ export default function Resources() {
     }
 
     if (!authenticated) {
-        return (
-            <>
-                <Nav />
-                <main className="max-w-6xl mx-auto p-6">
-                    <h1 className="text-2xl font-semibold mb-4">Resources</h1>
+    return (
+        <>
+            <Nav />
+            <main className="max-w-6xl mx-auto p-6">
+                <h1 className="text-2xl font-semibold mb-4">Resources</h1>
                     <p className="text-gray-600">Please log in to view resources.</p>
                 </main>
             </>

@@ -63,28 +63,28 @@ export default function Login() {
                             <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Email
                             </label>
-                            <input
+                        <input
                                 className="input-field"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="email"
                                 placeholder="you@example.com"
-                                required
-                            />
+                            required
+                        />
                         </div>
 
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Password
-                            </label>
-                            <input
+                    </label>
+                        <input
                                 className="input-field"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            type="password"
                                 placeholder="Enter your password"
-                                required
-                            />
+                            required
+                        />
                         </div>
 
                         <button
@@ -99,8 +99,8 @@ export default function Login() {
                             <p className="text-xs text-gray-500">
                                 Demo: alex@example.com / password
                             </p>
-                        </div>
-                    </form>
+                    </div>
+                </form>
                 </div>
             </main>
         </div>
