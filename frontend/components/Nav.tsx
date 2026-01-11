@@ -8,7 +8,8 @@ export default function Nav() {
     const [open, setOpen] = useState(false)
     const ref = useRef<HTMLDivElement | null>(null)
     const router = useRouter()
-    const { authenticated, logout } = useAuth()
+    const { authenticated, logout, user } = useAuth()
+    const isAdmin = user?.userType === 'admin'
 
     useEffect(() => {
         function onDoc(e: MouseEvent) {
@@ -30,6 +31,10 @@ export default function Nav() {
                         <Link href="/" className={linkClass('/')}>Home</Link>
                         <Link href="/people" className={linkClass('/people')}>People</Link>
                         <Link href="/resources" className={linkClass('/resources')}>Resources</Link>
+                        <Link href="/time-off" className={linkClass('/time-off')}>Time Off</Link>
+                        {isAdmin && (
+                            <Link href="/admin" className={linkClass('/admin')}>Admin</Link>
+                        )}
                     </div>
                 </div>
 
@@ -52,6 +57,11 @@ export default function Nav() {
                                     setOpen(false)
                                     if (router) router.push('/profile')
                                 }} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="/notifications" onClick={(e) => {
+                                    e.preventDefault()
+                                    setOpen(false)
+                                    if (router) router.push('/notifications')
+                                }} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Notifications</a>
                                 <a className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#">Settings</a>
                                 <a onClick={(e) => { e.preventDefault(); setOpen(false); logout(); router.push('/login') }} className="block px-3 py-2 text-sm text-red-600 hover:bg-red-50" href="#">Logout</a>
                             </div>

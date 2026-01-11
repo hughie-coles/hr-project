@@ -1,0 +1,1 @@
+{"c":["webpack"],"r":["pages/people","pages/admin"],"m":["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=%2Fapp%2Fpages%2Fpeople.tsx&page=%2Fpeople!","./pages/people.tsx","./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=%2Fapp%2Fpages%2Fadmin.tsx&page=%2Fadmin!","./pages/admin.tsx"]}

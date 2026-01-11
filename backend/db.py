@@ -27,6 +27,7 @@ class User(Base):
     start_date = Column(String, nullable=True)
     password = Column(String, nullable=True)
     role = Column(String, nullable=True)
+    user_type = Column(String, nullable=False, default='user')  # 'user' or 'admin'
     
     # Reporting relationship: employee reports to a manager
     if engine.dialect.name == 'postgresql':
@@ -48,6 +49,59 @@ User.manager = relationship(
     foreign_keys=[User.reports_to_id],
     backref='direct_reports'
 )
+
+
+class Resource(Base):
+    __tablename__ = "resources"
+    
+    if engine.dialect.name == 'postgresql':
+        id = Column(PG_UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+        uploaded_by_id = Column(PG_UUID(as_uuid=True), ForeignKey('users.id'), nullable=True)
+    else:
+        id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+        uploaded_by_id = Column(String(36), ForeignKey('users.id'), nullable=True)
+    
+    filename = Column(String, nullable=False)
+    original_filename = Column(String, nullable=False)
+    s3_key = Column(String, nullable=False)  # S3 object key instead of file_path
+    file_size = Column(Integer, nullable=False)
+    created_at = Column(String, nullable=False)  # ISO format datetime string
+    description = Column(String, nullable=True)
+
+
+class TimeOff(Base):
+    __tablename__ = "time_off"
+    
+    if engine.dialect.name == 'postgresql':
+        id = Column(PG_UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+        user_id = Column(PG_UUID(as_uuid=True), ForeignKey('users.id'), nullable=False)
+    else:
+        id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+        user_id = Column(String(36), ForeignKey('users.id'), nullable=False)
+    
+    start_date = Column(String, nullable=False)  # ISO format date string (YYYY-MM-DD)
+    end_date = Column(String, nullable=False)  # ISO format date string (YYYY-MM-DD)
+    created_at = Column(String, nullable=False)  # ISO format datetime string
+    status = Column(String, nullable=False, default='pending')  # 'pending', 'approved', 'rejected'
+    notes = Column(String, nullable=True)  # Optional notes/reason
+
+
+class Notification(Base):
+    __tablename__ = "notifications"
+    
+    if engine.dialect.name == 'postgresql':
+        id = Column(PG_UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+        user_id = Column(PG_UUID(as_uuid=True), ForeignKey('users.id'), nullable=False)
+    else:
+        id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+        user_id = Column(String(36), ForeignKey('users.id'), nullable=False)
+    
+    title = Column(String, nullable=False)
+    message = Column(String, nullable=False)
+    created_at = Column(String, nullable=False)  # ISO format datetime string
+    read = Column(String, nullable=False, default='false')  # 'true' or 'false' as string
+    type = Column(String, nullable=True)  # Optional: 'info', 'success', 'warning', 'error'
+    link = Column(String, nullable=True)  # Optional link URL (e.g., to approval page)
 
 
 def init_db():

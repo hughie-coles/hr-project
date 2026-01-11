@@ -5,6 +5,7 @@ type User = {
     email?: string
     name?: string
     position?: string
+    userType?: string
 }
 
 type AuthContextValue = {
