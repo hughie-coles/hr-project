@@ -45,46 +45,64 @@ export default function Login() {
     }
 
     return (
-        <>
-            <main className="max-w-md mx-auto p-6">
-                <h1 className="text-2xl font-semibold mb-4">Sign in</h1>
-                <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow space-y-4">
-                    {error && <div className="text-red-600">{error}</div>}
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
+            <main className="w-full max-w-md">
+                <div className="text-center mb-8">
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back</h1>
+                    <p className="text-gray-600">Sign in to your HR Platform account</p>
+                </div>
+                <div className="card">
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                                {error}
+                            </div>
+                        )}
 
-                    <label className="block">
-                        <span className="text-sm text-gray-600">Email</span>
-                        <input
-                            className="mt-1 block w-full border rounded p-2"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            type="email"
-                            required
-                        />
-                    </label>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Email
+                            </label>
+                            <input
+                                className="input-field"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email"
+                                placeholder="you@example.com"
+                                required
+                            />
+                        </div>
 
-                    <label className="block">
-                        <span className="text-sm text-gray-600">Password</span>
-                        <input
-                            className="mt-1 block w-full border rounded p-2"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            type="password"
-                            required
-                        />
-                    </label>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Password
+                            </label>
+                            <input
+                                className="input-field"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                placeholder="Enter your password"
+                                required
+                            />
+                        </div>
 
-                    <div className="flex items-center justify-between">
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
+                            className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled={loading}
                         >
                             {loading ? 'Signing in…' : 'Sign in'}
                         </button>
-                        <div className="text-sm text-gray-500">Demo user: alex@example.com / password</div>
-                    </div>
-                </form>
+                        
+                        <div className="text-center pt-4 border-t border-gray-100">
+                            <p className="text-xs text-gray-500">
+                                Demo: alex@example.com / password
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </main>
-        </>
+        </div>
     )
 }

@@ -126,6 +126,7 @@ export default function AdminPage() {
 
 function UserManagement({ employees, onUserAdded, token }: { employees: User[], onUserAdded: () => void, token: string | null }) {
     const [showForm, setShowForm] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('')
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -141,6 +142,19 @@ function UserManagement({ employees, onUserAdded, token }: { employees: User[], 
     })
     const [submitting, setSubmitting] = useState(false)
     const [error, setError] = useState<string | null>(null)
+
+    // Filter employees based on search query
+    const filteredEmployees = employees.filter((emp) => {
+        if (!searchQuery.trim()) return true
+        
+        const query = searchQuery.toLowerCase().trim()
+        const nameMatch = emp.name?.toLowerCase().includes(query) || false
+        const emailMatch = emp.email?.toLowerCase().includes(query) || false
+        const positionMatch = emp.position?.toLowerCase().includes(query) || false
+        const roleMatch = emp.role?.toLowerCase().includes(query) || false
+        
+        return nameMatch || emailMatch || positionMatch || roleMatch
+    })
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
@@ -203,10 +217,20 @@ function UserManagement({ employees, onUserAdded, token }: { employees: User[], 
                 <h2 className="text-xl font-medium">Users</h2>
                 <button
                     onClick={() => setShowForm(!showForm)}
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="btn-primary"
                 >
                     {showForm ? 'Cancel' : 'Add User'}
                 </button>
+            </div>
+
+            <div className="mb-4">
+                <input
+                    type="text"
+                    placeholder="Search users by name, email, position, or role..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="input-field max-w-md"
+                />
             </div>
 
             {showForm && (
@@ -338,31 +362,43 @@ function UserManagement({ employees, onUserAdded, token }: { employees: User[], 
                 </div>
             )}
 
-            <div className="bg-white rounded shadow overflow-hidden">
-                <table className="w-full">
-                    <thead className="bg-gray-50">
-                        <tr>
-                            <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Name</th>
-                            <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Email</th>
-                            <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Position</th>
-                            <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200">
-                        {employees.map((emp) => (
-                            <tr key={emp.id}>
-                                <td className="px-4 py-3">{emp.name}</td>
-                                <td className="px-4 py-3">{emp.email || '-'}</td>
-                                <td className="px-4 py-3">{emp.position || '-'}</td>
-                                <td className="px-4 py-3">
-                                    <Link href={`/profile?id=${emp.id}`} className="text-blue-600 hover:underline">
-                                        View
-                                    </Link>
-                                </td>
+            <div className="card overflow-hidden p-0">
+                {filteredEmployees.length === 0 && employees.length > 0 ? (
+                    <div className="p-6 text-center text-gray-500">
+                        No users found matching "{searchQuery}"
+                    </div>
+                ) : filteredEmployees.length === 0 && employees.length === 0 ? (
+                    <div className="p-6 text-center text-gray-500">
+                        No users yet. Click "Add User" to create one.
+                    </div>
+                ) : (
+                    <table className="w-full">
+                        <thead className="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Name</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Email</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Position</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Role</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Actions</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                            {filteredEmployees.map((emp) => (
+                                <tr key={emp.id} className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 text-sm font-medium text-gray-900">{emp.name}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-600">{emp.email || '-'}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-600">{emp.position || '-'}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-600">{emp.role || '-'}</td>
+                                    <td className="px-6 py-4 text-sm">
+                                        <Link href={`/profile?id=${emp.id}`} className="text-blue-600 hover:text-blue-800 hover:underline font-medium">
+                                            View
+                                        </Link>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
         </div>
     )
@@ -370,10 +406,22 @@ function UserManagement({ employees, onUserAdded, token }: { employees: User[], 
 
 function ResourceManagement({ resources, onResourceAdded, onResourceDeleted, token }: { resources: Resource[], onResourceAdded: () => void, onResourceDeleted: () => void, token: string | null }) {
     const [showForm, setShowForm] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('')
     const [file, setFile] = useState<File | null>(null)
     const [description, setDescription] = useState('')
     const [submitting, setSubmitting] = useState(false)
     const [error, setError] = useState<string | null>(null)
+
+    // Filter resources based on search query
+    const filteredResources = resources.filter((resource) => {
+        if (!searchQuery.trim()) return true
+        
+        const query = searchQuery.toLowerCase().trim()
+        const filenameMatch = resource.filename?.toLowerCase().includes(query) || false
+        const descriptionMatch = resource.description?.toLowerCase().includes(query) || false
+        
+        return filenameMatch || descriptionMatch
+    })
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
@@ -443,10 +491,20 @@ function ResourceManagement({ resources, onResourceAdded, onResourceDeleted, tok
                 <h2 className="text-xl font-medium">Resources</h2>
                 <button
                     onClick={() => setShowForm(!showForm)}
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="btn-primary"
                 >
                     {showForm ? 'Cancel' : 'Upload Resource'}
                 </button>
+            </div>
+
+            <div className="mb-4">
+                <input
+                    type="text"
+                    placeholder="Search resources by filename or description..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="input-field max-w-md"
+                />
             </div>
 
             {showForm && (
@@ -485,28 +543,32 @@ function ResourceManagement({ resources, onResourceAdded, onResourceDeleted, tok
                 </div>
             )}
 
-            <div className="bg-white rounded shadow overflow-hidden">
-                {resources.length === 0 ? (
+            <div className="card overflow-hidden p-0">
+                {filteredResources.length === 0 && resources.length > 0 ? (
+                    <div className="p-6 text-center text-gray-500">
+                        No resources found matching "{searchQuery}"
+                    </div>
+                ) : filteredResources.length === 0 && resources.length === 0 ? (
                     <div className="p-6 text-center text-gray-500">No resources uploaded yet</div>
                 ) : (
                     <table className="w-full">
-                        <thead className="bg-gray-50">
+                        <thead className="bg-gray-50 border-b border-gray-200">
                             <tr>
-                                <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Filename</th>
-                                <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Size</th>
-                                <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Description</th>
-                                <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Uploaded</th>
-                                <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Actions</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Filename</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Size</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Description</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Uploaded</th>
+                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-200">
-                            {resources.map((resource) => (
+                            {filteredResources.map((resource) => (
                                 <tr key={resource.id}>
-                                    <td className="px-4 py-3">{resource.filename}</td>
-                                    <td className="px-4 py-3">{formatFileSize(resource.size)}</td>
-                                    <td className="px-4 py-3">{resource.description || '-'}</td>
-                                    <td className="px-4 py-3">{new Date(resource.createdAt).toLocaleDateString()}</td>
-                                    <td className="px-4 py-3">
+                                    <td className="px-6 py-4 text-sm font-medium text-gray-900">{resource.filename}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-600">{formatFileSize(resource.size)}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-600">{resource.description || '-'}</td>
+                                    <td className="px-6 py-4 text-sm text-gray-600">{new Date(resource.createdAt).toLocaleDateString()}</td>
+                                    <td className="px-6 py-4 text-sm">
                                         <button
                                             onClick={async () => {
                                                 try {

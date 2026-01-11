@@ -1,5 +1,6 @@
 import Nav from '../components/Nav'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { useAuth } from '../context/AuthContext'
 
 interface Notification {
@@ -14,6 +15,7 @@ interface Notification {
 
 export default function NotificationsPage() {
     const { token, authenticated } = useAuth()
+    const router = useRouter()
     const [notifications, setNotifications] = useState<Notification[]>([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
@@ -172,7 +174,11 @@ export default function NotificationsPage() {
                                                 {notification.link ? (
                                                     <a 
                                                         href={notification.link}
-                                                        className="font-medium hover:underline"
+                                                        onClick={(e) => {
+                                                            e.preventDefault()
+                                                            router.push(notification.link!)
+                                                        }}
+                                                        className="font-medium hover:underline cursor-pointer"
                                                     >
                                                         {notification.title}
                                                     </a>
@@ -189,7 +195,11 @@ export default function NotificationsPage() {
                                             {notification.link && (
                                                 <a
                                                     href={notification.link}
-                                                    className="text-sm text-blue-600 hover:text-blue-800 hover:underline mb-2 inline-block"
+                                                    onClick={(e) => {
+                                                        e.preventDefault()
+                                                        router.push(notification.link!)
+                                                    }}
+                                                    className="text-sm text-blue-600 hover:text-blue-800 hover:underline mb-2 inline-block cursor-pointer"
                                                 >
                                                     View & Approve →
                                                 </a>

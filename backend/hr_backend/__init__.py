@@ -176,6 +176,33 @@ def me():
         return jsonify(result)
 
 
+@app.route("/api/direct-reports", methods=["GET"])
+@login_required
+def get_direct_reports():
+    """Get all users who report directly to the current user."""
+    uid = request.user_id
+    try:
+        uid_parsed = uuid.UUID(uid)
+    except Exception:
+        uid_parsed = uid
+
+    with SessionLocal() as session:
+        # Get all users who report to the current user
+        direct_reports = session.query(User).filter(User.reports_to_id == uid_parsed).all()
+        
+        result = []
+        for emp in direct_reports:
+            result.append({
+                "id": str(emp.id),
+                "name": emp.name,
+                "email": emp.email,
+                "position": emp.position,
+                "role": emp.role,
+            })
+        
+        return jsonify({"directReports": result})
+
+
 # Admin endpoints
 @app.route("/api/admin/users", methods=["POST"])
 @admin_required
@@ -598,6 +625,54 @@ def update_time_off_status(time_off_id: str, new_status: str):
             "notes": time_off.notes,
             "createdAt": time_off.created_at,
         }), 200
+
+
+@app.route("/api/time-off/<time_off_id>", methods=["DELETE"])
+@login_required
+def cancel_time_off(time_off_id: str):
+    """Cancel/delete a pending time off request. Only the user who created it can cancel."""
+    try:
+        toid = uuid.UUID(time_off_id)
+    except Exception:
+        toid = time_off_id
+    
+    uid = request.user_id
+    try:
+        uid_parsed = uuid.UUID(uid)
+    except Exception:
+        uid_parsed = uid
+    
+    with SessionLocal() as session:
+        time_off = session.query(TimeOff).filter(TimeOff.id == toid).first()
+        if not time_off:
+            return jsonify({"message": "time off request not found"}), 404
+        
+        # Check if current user is the one who created the request
+        if time_off.user_id != uid_parsed:
+            return jsonify({"message": "you can only cancel your own time off requests"}), 403
+        
+        # Only allow canceling pending requests
+        if time_off.status != 'pending':
+            return jsonify({"message": "only pending requests can be canceled"}), 400
+        
+        # If the request has a manager, notify them of the cancellation
+        employee = session.query(User).filter(User.id == time_off.user_id).first()
+        if employee and employee.manager:
+            notification = Notification(
+                user_id=employee.manager.id,
+                title=f"Time Off Request Cancelled by {employee.name}",
+                message=f"{employee.name} has cancelled their time off request from {time_off.start_date} to {time_off.end_date}.",
+                created_at=datetime.utcnow().isoformat(),
+                read='false',
+                type='info',
+            )
+            session.add(notification)
+        
+        # Delete the time off request
+        session.delete(time_off)
+        session.commit()
+        
+        return jsonify({"message": "time off request cancelled"}), 200
 
 
 @app.route("/api/time-off/pending", methods=["GET"])

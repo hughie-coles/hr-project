@@ -54,6 +54,33 @@ export default function TimeOffPage() {
         }
     }
 
+    async function handleCancel(requestId: string) {
+        if (!token) return
+
+        if (!confirm('Are you sure you want to cancel this time off request?')) {
+            return
+        }
+
+        try {
+            const res = await fetch(`/api/time-off/${requestId}`, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}))
+                throw new Error(data.message || 'Failed to cancel request')
+            }
+
+            // Refresh the list
+            await fetchTimeOffRequests()
+        } catch (err: any) {
+            alert(err?.message ?? 'Failed to cancel request')
+        }
+    }
+
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
         if (!token) return
@@ -142,65 +169,72 @@ export default function TimeOffPage() {
     return (
         <>
             <Nav />
-            <main className="max-w-6xl mx-auto p-6">
-                <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-semibold">Time Off</h1>
+            <main className="max-w-7xl mx-auto px-6 py-8">
+                <div className="flex justify-between items-center mb-8">
+                    <div>
+                        <h1 className="text-3xl font-bold text-gray-900 mb-2">Time Off</h1>
+                        <p className="text-gray-600">Request and manage your time off</p>
+                    </div>
                     <button
                         onClick={() => setShowForm(!showForm)}
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                        className="btn-primary"
                     >
                         {showForm ? 'Cancel' : 'Request Time Off'}
                     </button>
                 </div>
 
                 {showForm && (
-                    <div className="bg-white rounded shadow p-6 mb-6">
-                        <h2 className="text-lg font-medium mb-4">Request Time Off</h2>
-                        {error && <div className="text-red-600 mb-4">{error}</div>}
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="card mb-6">
+                        <h2 className="text-lg font-semibold text-gray-900 mb-4">Request Time Off</h2>
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 mb-4 text-sm">
+                                {error}
+                            </div>
+                        )}
+                        <form onSubmit={handleSubmit} className="space-y-5">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label className="block text-sm font-medium mb-1">Start Date *</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Start Date *</label>
                                     <input
                                         type="date"
                                         required
                                         value={startDate}
                                         onChange={(e) => setStartDate(e.target.value)}
                                         min={new Date().toISOString().split('T')[0]}
-                                        className="w-full border rounded p-2"
+                                        className="input-field"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium mb-1">End Date *</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1.5">End Date *</label>
                                     <input
                                         type="date"
                                         required
                                         value={endDate}
                                         onChange={(e) => setEndDate(e.target.value)}
                                         min={startDate || new Date().toISOString().split('T')[0]}
-                                        className="w-full border rounded p-2"
+                                        className="input-field"
                                     />
                                 </div>
                             </div>
                             {startDate && endDate && (
-                                <div className="text-sm text-gray-600">
-                                    Total days: {calculateDays(startDate, endDate)} day{calculateDays(startDate, endDate) !== 1 ? 's' : ''}
+                                <div className="text-sm text-gray-600 bg-blue-50 px-4 py-2 rounded-lg">
+                                    Total days: <span className="font-semibold">{calculateDays(startDate, endDate)}</span> day{calculateDays(startDate, endDate) !== 1 ? 's' : ''}
                                 </div>
                             )}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Notes (Optional)</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-1.5">Notes (Optional)</label>
                                 <textarea
                                     value={notes}
                                     onChange={(e) => setNotes(e.target.value)}
                                     placeholder="Add any additional notes or reason for time off..."
-                                    className="w-full border rounded p-2"
+                                    className="input-field"
                                     rows={3}
                                 />
                             </div>
                             <button
                                 type="submit"
                                 disabled={submitting}
-                                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+                                className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {submitting ? 'Submitting...' : 'Submit Request'}
                             </button>
@@ -208,8 +242,8 @@ export default function TimeOffPage() {
                     </div>
                 )}
 
-                <div className="bg-white rounded shadow overflow-hidden">
-                    <h2 className="text-lg font-medium p-6 border-b">My Time Off Requests</h2>
+                <div className="card overflow-hidden p-0">
+                    <h2 className="text-lg font-semibold text-gray-900 p-6 border-b border-gray-200">My Time Off Requests</h2>
 
                     {loading ? (
                         <div className="text-center py-8 text-gray-500">Loading time off requests...</div>
@@ -231,6 +265,7 @@ export default function TimeOffPage() {
                                     <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Status</th>
                                     <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Notes</th>
                                     <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Requested</th>
+                                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Actions</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200">
@@ -255,6 +290,16 @@ export default function TimeOffPage() {
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-500">
                                             {new Date(request.createdAt).toLocaleDateString()}
+                                        </td>
+                                        <td className="px-6 py-4 text-sm">
+                                            {request.status === 'pending' && (
+                                                <button
+                                                    onClick={() => handleCancel(request.id)}
+                                                    className="px-3 py-1.5 text-sm font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors duration-200"
+                                                >
+                                                    Cancel
+                                                </button>
+                                            )}
                                         </td>
                                     </tr>
                                 ))}

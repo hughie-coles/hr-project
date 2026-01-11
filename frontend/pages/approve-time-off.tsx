@@ -61,17 +61,25 @@ export default function ApproveTimeOffPage() {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
                 },
             })
 
             if (!res.ok) {
                 const data = await res.json().catch(() => ({}))
-                throw new Error(data.message || 'Failed to approve request')
+                const errorMessage = data.message || `Failed to approve request (${res.status})`
+                console.error('Approval error:', errorMessage, data)
+                alert(errorMessage)
+                return
             }
 
-            // Remove from pending list
-            setPendingRequests(pendingRequests.filter(r => r.id !== requestId))
+            const result = await res.json().catch(() => ({}))
+            console.log('Approval successful:', result)
+
+            // Refresh the pending requests list
+            await fetchPendingRequests()
         } catch (err: any) {
+            console.error('Approval exception:', err)
             alert(err?.message ?? 'Failed to approve request')
         } finally {
             setProcessing(null)
@@ -91,17 +99,25 @@ export default function ApproveTimeOffPage() {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
                 },
             })
 
             if (!res.ok) {
                 const data = await res.json().catch(() => ({}))
-                throw new Error(data.message || 'Failed to reject request')
+                const errorMessage = data.message || `Failed to reject request (${res.status})`
+                console.error('Rejection error:', errorMessage, data)
+                alert(errorMessage)
+                return
             }
 
-            // Remove from pending list
-            setPendingRequests(pendingRequests.filter(r => r.id !== requestId))
+            const result = await res.json().catch(() => ({}))
+            console.log('Rejection successful:', result)
+
+            // Refresh the pending requests list
+            await fetchPendingRequests()
         } catch (err: any) {
+            console.error('Rejection exception:', err)
             alert(err?.message ?? 'Failed to reject request')
         } finally {
             setProcessing(null)
@@ -194,14 +210,22 @@ export default function ApproveTimeOffPage() {
 
                                 <div className="flex gap-3 pt-4 border-t">
                                     <button
-                                        onClick={() => handleApprove(request.id)}
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            handleApprove(request.id)
+                                        }}
                                         disabled={processing === request.id}
                                         className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50"
                                     >
                                         {processing === request.id ? 'Processing...' : 'Approve'}
                                     </button>
                                     <button
-                                        onClick={() => handleReject(request.id)}
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            handleReject(request.id)
+                                        }}
                                         disabled={processing === request.id}
                                         className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 disabled:opacity-50"
                                     >

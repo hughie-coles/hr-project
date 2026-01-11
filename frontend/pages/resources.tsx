@@ -13,6 +13,8 @@ interface Resource {
 export default function Resources() {
     const { token, authenticated } = useAuth()
     const [resources, setResources] = useState<Resource[]>([])
+    const [filteredResources, setFilteredResources] = useState<Resource[]>([])
+    const [searchQuery, setSearchQuery] = useState('')
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
@@ -38,13 +40,35 @@ export default function Resources() {
             }
 
             const data = await res.json()
-            setResources(data.resources || [])
+            const resourcesList = data.resources || []
+            setResources(resourcesList)
+            setFilteredResources(resourcesList)
         } catch (err: any) {
             setError(err?.message ?? 'Failed to load resources')
         } finally {
             setLoading(false)
         }
     }
+
+    useEffect(() => {
+        if (!resources.length) {
+            setFilteredResources([])
+            return
+        }
+
+        if (!searchQuery.trim()) {
+            setFilteredResources(resources)
+            return
+        }
+
+        const query = searchQuery.toLowerCase().trim()
+        const filtered = resources.filter((resource) => {
+            const filenameMatch = resource.filename.toLowerCase().includes(query)
+            const descriptionMatch = resource.description?.toLowerCase().includes(query) || false
+            return filenameMatch || descriptionMatch
+        })
+        setFilteredResources(filtered)
+    }, [searchQuery, resources])
 
     async function handleDownload(resourceId: string, filename: string) {
         if (!token) return
@@ -95,8 +119,22 @@ export default function Resources() {
     return (
         <>
             <Nav />
-            <main className="max-w-6xl mx-auto p-6">
-                <h1 className="text-2xl font-semibold mb-6">Resources</h1>
+            <main className="max-w-7xl mx-auto px-6 py-8">
+                <div className="mb-8">
+                    <div className="mb-4">
+                        <h1 className="text-3xl font-bold text-gray-900 mb-2">Resources</h1>
+                        <p className="text-gray-600">Access and download company resources</p>
+                    </div>
+                    <div className="max-w-md">
+                        <input
+                            type="text"
+                            placeholder="Search by filename or description..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="input-field w-full"
+                        />
+                    </div>
+                </div>
 
                 {loading ? (
                     <div className="text-center py-8 text-gray-500">Loading resources...</div>
@@ -104,14 +142,18 @@ export default function Resources() {
                     <div className="bg-red-50 border border-red-200 rounded p-4 text-red-700">
                         {error}
                     </div>
-                ) : resources.length === 0 ? (
-                    <div className="bg-white rounded shadow p-6 text-center text-gray-500">
+                ) : filteredResources.length === 0 && resources.length === 0 ? (
+                    <div className="card p-6 text-center text-gray-500">
                         No resources available
                     </div>
+                ) : filteredResources.length === 0 && resources.length > 0 ? (
+                    <div className="card p-6 text-center text-gray-500">
+                        No resources found matching "{searchQuery}"
+                    </div>
                 ) : (
-                    <div className="bg-white rounded shadow overflow-hidden">
+                    <div className="card overflow-hidden p-0">
                         <table className="w-full">
-                            <thead className="bg-gray-50">
+                            <thead className="bg-gray-50 border-b border-gray-200">
                                 <tr>
                                     <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Filename</th>
                                     <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Size</th>
@@ -121,7 +163,7 @@ export default function Resources() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200">
-                                {resources.map((resource) => (
+                                {filteredResources.map((resource) => (
                                     <tr key={resource.id} className="hover:bg-gray-50">
                                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
                                             {resource.filename}
@@ -136,12 +178,12 @@ export default function Resources() {
                                             {new Date(resource.createdAt).toLocaleDateString()}
                                         </td>
                                         <td className="px-6 py-4 text-sm">
-                                            <button
-                                                onClick={() => handleDownload(resource.id, resource.filename)}
-                                                className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
-                                            >
-                                                Download
-                                            </button>
+                                        <button
+                                            onClick={() => handleDownload(resource.id, resource.filename)}
+                                            className="btn-primary text-sm"
+                                        >
+                                            Download
+                                        </button>
                                         </td>
                                     </tr>
                                 ))}
